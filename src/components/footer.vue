@@ -21,6 +21,7 @@ export default {
   padding: 15px 25%;
   border-top: 1px #dbdbdb solid;
   text-align: center;
+  background: #fff;
   img{
     float: left;
   }
