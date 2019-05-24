@@ -7,10 +7,10 @@
       <Logo></Logo>
     </div>
     <div class="actionBox">
-      <span style="background-image: linear-gradient(45deg, #43e97b 0%, #38f9d7 99%, #38f9d7 100%);" @click="loadPage('https://vannvan.github.io/w-ui/dist/#/color')">
+      <span style="background-image: linear-gradient(45deg, #43e97b 0%, #38f9d7 99%, #38f9d7 100%);" @click="loadPage('color')">
         组件
       </span>
-      <span style=" background-image: linear-gradient(45deg, #e0c3fc 0%, #8ec5fc 99%, #8ec5fc 100%);" @click="loadPage('https://github.com/vannvan/w-ui')">
+      <span style=" background-image: linear-gradient(45deg, #e0c3fc 0%, #8ec5fc 99%, #8ec5fc 100%);" @click="locationPage('https://github.com/vannvan/w-ui')">
         github
       </span>
     </div>
@@ -72,6 +72,11 @@ export default {
   },
   methods: {
     loadPage(url) {
+      this.$router.push({
+        path:"/"+url
+      })
+    },
+    locationPage(url){
       window.location.href = url
     }
   }
@@ -95,10 +100,10 @@ export default {
   -webkit-animation-timing-function:linear;
 }
 @-webkit-keyframes up /* Safari and Chrome */
-        {
-            0%   { margin-bottom:30px;}
-            100% { margin-bottom:-50px;}
-        }
+{
+    0%   { margin-bottom:30px;}
+    100% { margin-bottom:-50px;}
+}
 .actionBox{
   span{
     padding: 15px 50px;
