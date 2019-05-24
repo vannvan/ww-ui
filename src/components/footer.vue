@@ -3,7 +3,7 @@
     <img src="https://avatar-static.segmentfault.com/255/947/2559476360-5c30d358d524d_big64" alt="" style="height:40px;">
     <span style="text-align:center">
       segmentfault系列文章：
-      https://segmentfault.com/a/1190000019041312
+      <a href="https://segmentfault.com/a/1190000019041312">从零开始构建自己的vue组件库</a>
     </span>
   </div>
 </template>

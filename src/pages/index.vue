@@ -3,11 +3,11 @@
     <!-- <img src="../assets/img/logo.png"> -->
     <!-- <p>一款轻量级、模块化的前端 UI 组件库</p> -->
     <!-- <router-link :to="{ name: 'icon', params: {} }">组件</router-link> -->
-    <div style="height:450px;margin-bottom:-50px">
+    <div style="height:450px;margin-bottom:-50px" class="mainBox">
       <Logo></Logo>
     </div>
     <div class="actionBox">
-      <span style="background-image: linear-gradient(45deg, #43e97b 0%, #38f9d7 99%, #38f9d7 100%);" @click="loadPage('https://vannvan.github.io/w-ui/dist/#/')">
+      <span style="background-image: linear-gradient(45deg, #43e97b 0%, #38f9d7 99%, #38f9d7 100%);" @click="loadPage('https://vannvan.github.io/w-ui/dist/#/index')">
         组件
       </span>
       <span style=" background-image: linear-gradient(45deg, #e0c3fc 0%, #8ec5fc 99%, #8ec5fc 100%);" @click="loadPage('https://github.com/vannvan/w-ui')">
@@ -88,6 +88,17 @@ export default {
   margin-top: -50px;
   margin-bottom:250px;
 }
+.mainBox{
+  animation:up 1s;
+  -webkit-animation:up 1s;
+  // animation-fill-mode: forwards;
+  -webkit-animation-timing-function:linear;
+}
+@-webkit-keyframes up /* Safari and Chrome */
+        {
+            0%   { margin-bottom:30px;}
+            100% { margin-bottom:-50px;}
+        }
 .actionBox{
   span{
     padding: 15px 50px;
