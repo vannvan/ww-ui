@@ -7,7 +7,7 @@
       <Logo></Logo>
     </div>
     <div class="actionBox">
-      <span style="background-image: linear-gradient(45deg, #43e97b 0%, #38f9d7 99%, #38f9d7 100%);" @click="loadPage('https://vannvan.github.io/w-ui/dist/#/index')">
+      <span style="background-image: linear-gradient(45deg, #43e97b 0%, #38f9d7 99%, #38f9d7 100%);" @click="loadPage('https://vannvan.github.io/w-ui/dist/#/index/index')">
         组件
       </span>
       <span style=" background-image: linear-gradient(45deg, #e0c3fc 0%, #8ec5fc 99%, #8ec5fc 100%);" @click="loadPage('https://github.com/vannvan/w-ui')">
