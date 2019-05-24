@@ -26,32 +26,45 @@
     <div class="header-container">
       <!-- <router-link :to="{name: 'index'}"><img src="../assets/img/banner.png" width="100"></router-link> -->
       <!-- <router-link :to="{name: 'giud'}">组件</router-link> -->
-      <h1 class="" @click="showAlert()">Ww-UI</h1>
+      <!-- <h1 class="" @click="showAlert()">W-UI</h1> -->
+      <div class="logoBox">
+        <Logo></Logo>
+      </div>
     </div>
     <!-- <W-Modal v-model="showModal" title="提示" showFooter=true></W-Modal> -->
   </header>
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        showModal:true
-      }
-    },
-    mounted() {
-      //do something after mounting vue instance
-      // this.$Modal.confirm({
-      //     title:'警告',
-      //     content: '数据删除后不可恢复',
-      //     width:'300',
-      //     onOk: () => {
-      //        console.log('点击了ok')
-      //     },
-      //     onCancel: () => {
-      //       return
-      //     }
-      // });
+import Logo from '@/components/logo.vue'
+export default {
+  components: {
+    Logo
+  },
+  data () {
+    return {
+      showModal:true
     }
+  },
+  mounted() {
+    //do something after mounting vue instance
+    // this.$Modal.confirm({
+    //     title:'警告',
+    //     content: '数据删除后不可恢复',
+    //     width:'300',
+    //     onOk: () => {
+    //        console.log('点击了ok')
+    //     },
+    //     onCancel: () => {
+    //       return
+    //     }
+    // });
   }
+}
 </script>
+<style>
+.logoBox{
+  width: 120px;
+  height: 100%;
+}
+</style>

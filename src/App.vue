@@ -9,6 +9,7 @@
       </transition>
     </div>
     <router-view class="page" v-else></router-view>
+    <Footer></Footer>
     <!-- <router-view/> -->
   </div>
 </template>
@@ -16,6 +17,7 @@
 <script>
 import mainHeader from './components/header.vue'
 import sideNav from './components/side-nav.vue'
+import Footer from './components/footer.vue'
 export default {
   name: 'App',
   data () {
@@ -29,7 +31,7 @@ export default {
     }
   },
   components: {
-    sideNav,mainHeader
+    sideNav,mainHeader,Footer
   }
 }
 </script>
