@@ -14,12 +14,12 @@
 
 [演示地址](https://vannvan.github.io/w-ui/dist/#/)
 
-## 特性
+## Characteristic
 
 - 组件思想较易理解
 - 提供友好的API,使用灵活
 
-## 使用
+## How to use
 
 ``` js
 import Wui from 'wwui' // 引入组件库
@@ -27,6 +27,6 @@ import 'wwui/dist/styles/wwui.css'; // 引入样式库
 Vue.use(Wui)
 ```
 
-## 贡献
+## Contribution and Exchange
 
 如果你在使用 `ww-UI` 时遇到问题，或者有好的建议，欢迎给我们提 [Issue](https://github.com/vannvan/w-ui/issues) 或 [Pull Request](https://github.com/vannvan/w-ui/pulls)
