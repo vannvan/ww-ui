@@ -23,7 +23,7 @@
 
 ``` js
 import Wui from 'wwui' // 引入组件库
-import 'wwui/dist/styles/iview.css'; // 引入样式库
+import 'wwui/dist/styles/wwui.css'; // 引入样式库
 Vue.use(Wui)
 ```
 
