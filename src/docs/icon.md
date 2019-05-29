@@ -1,8 +1,47 @@
+<script>
+import iconList from '@/assets/js/icon.json'
+ export default {
+    data(){
+      return{
+        iconList:iconList
+      }
+    },
+    computed:{
+      RandomColor() {
+        return function(){
+          let r, g, b;
+          r = Math.floor(Math.random() * 256);
+          g = Math.floor(Math.random() * 256);
+          b = Math.floor(Math.random() * 256);
+          return "rgb(" +r + ',' +g+ ',' +b+ ")";
+        }
+      }
+    }
+ }
+</script>
 <style lang="scss">
 .demo-icon{
   margin-top:10px;
   i{
     margin-right:15px
+  }
+}
+.iconBox{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  .iconItem{
+    height: 64px;
+    width: 120px;
+    padding: 10px;
+    margin:5px;
+    float: left;
+    i{
+      font-size: 24px;
+    }
+    p{
+      font-size: 10px;
+    }
   }
 }
 </style>
@@ -50,3 +89,12 @@
 | size     | 尺寸   | String,number  |       —     |
 | type     | 类型   | String   |     —    |
 | color     | 颜色   | String    | — | -   |
+
+### All icons
+
+<div class="iconBox">
+  <div class="iconItem" v-for="(item, index) in iconList">
+    <i :class="item" :style="{color:RandomColor()}"></i>
+    <p>{{item}}</p>
+  </div>
+</div>
