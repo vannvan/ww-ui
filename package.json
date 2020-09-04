@@ -16,7 +16,7 @@
     "less-loader": "^4.1.0",
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-container": "^2.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "sass": "^1.19.0",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.2",
