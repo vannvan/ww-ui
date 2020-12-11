@@ -105,6 +105,11 @@ export default {
     value(val) {
       this.visible = val;
     },
+    title(val) {
+      if (this.$slots.header === undefined) {
+        this.showHead = !!val;
+      }
+    },
   },
   computed: {
     modalWidth() {
