@@ -9,6 +9,7 @@ import WMessage from "./message/index";
 import WNotice from "./notice/index";
 import WLoading from "./loading/index";
 import WMenu from "./menu/index";
+import WDatePicker from "./date-picker/index";
 const components = [
   WButton,
   WModal,
@@ -18,11 +19,12 @@ const components = [
   WIcon,
   WLoading,
   WMenu,
+  WDatePicker
 ];
 
-const install = function (Vue) {
+const install = function(Vue, opts = {}) {
   if (install.installed) return;
-  components.map((component) => Vue.component(component.name, component));
+  components.map(component => Vue.component(component.name, component));
   Vue.prototype.$Modal = WModal;
   Vue.prototype.$Message = WMessage;
   Vue.prototype.$Notice = WNotice;
@@ -33,8 +35,8 @@ const install = function (Vue) {
         ? "maskClosable" in opts.modal
           ? opts.modal.maskClosable
           : ""
-        : "",
-    },
+        : ""
+    }
   };
 };
 
@@ -52,4 +54,5 @@ export default {
   WIcon,
   WLoading,
   WMenu,
+  WDatePicker
 };

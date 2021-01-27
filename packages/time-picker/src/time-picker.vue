@@ -32,43 +32,43 @@
 </template>
 
 <script>
-const ITEM_HEIGHT = 24 //元素像素高度
+const ITEM_HEIGHT = 24; //元素像素高度
 const TIME_OPTS = [
   {
-    key: 'hour',
+    key: "hour",
     list: Array.from({ length: 24 }, (v, k) => {
-      return k < 10 ? '0' + k : k
+      return k < 10 ? "0" + k : k;
     })
   },
   {
-    key: 'minutes',
+    key: "minutes",
     list: Array.from({ length: 60 }, (v, k) => {
-      return k < 10 ? '0' + k : k
+      return k < 10 ? "0" + k : k;
     })
   },
   {
-    key: 'seconds',
+    key: "seconds",
     list: Array.from({ length: 60 }, (v, k) => {
-      return k < 10 ? '0' + k : k
+      return k < 10 ? "0" + k : k;
     })
   }
-]
+];
 export default {
   data() {
     return {
       checked: {
-        hour: '00',
-        minutes: '00',
-        seconds: '00'
+        hour: "00",
+        minutes: "00",
+        seconds: "00"
       }
-    }
+    };
   },
   props: {
     type: {
       type: String,
-      default: 'minutes',
+      default: "minutes",
       viladator: function(value) {
-        return ['hour', 'minutes', 'seconds'].includes(value)
+        return ["hour", "minutes", "seconds"].includes(value);
       }
     },
     hideTitle: {
@@ -78,29 +78,29 @@ export default {
   },
   computed: {
     filterTimeOpts() {
-      let levelIndex = TIME_OPTS.findIndex((item) => item.key == this.type)
-      return TIME_OPTS.slice(0, levelIndex + 1)
+      let levelIndex = TIME_OPTS.findIndex(item => item.key == this.type);
+      return TIME_OPTS.slice(0, levelIndex + 1);
     },
     checkedItems() {
       return Object.values(this.checked)
         .filter(Boolean)
-        .join(':')
+        .join(":");
     },
     paddingLeft() {
       const opts = {
-        hour: 'padding-left:150px',
-        minutes: 'padding-left:75px',
-        seconds: 'padding-left:48px'
-      }
-      return opts[this.type]
+        hour: "padding-left:150px",
+        minutes: "padding-left:75px",
+        seconds: "padding-left:48px"
+      };
+      return opts[this.type];
     },
     itemsWidth() {
       const opts = {
-        hour: 'width:100%',
-        minutes: 'width:50%',
-        seconds: 'width:33.3%'
-      }
-      return opts[this.type]
+        hour: "width:100%",
+        minutes: "width:50%",
+        seconds: "width:33.3%"
+      };
+      return opts[this.type];
     }
   },
 
@@ -109,17 +109,17 @@ export default {
   },
   methods: {
     timeClick(item, index, key) {
-      this.checked[key] = item
-      this.handleScroll(key, index)
+      this.checked[key] = item;
+      this.handleScroll(key, index);
     },
 
     //控制滚动
     handleScroll(key, index) {
-      let targetOffsetY = ITEM_HEIGHT * index
-      this.$refs[key][0].scrollTo(0, targetOffsetY)
+      let targetOffsetY = ITEM_HEIGHT * index;
+      this.$refs[key][0].scrollTo(0, targetOffsetY);
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -135,7 +135,7 @@ export default {
   p {
     line-height: 12px;
     text-align: center;
-    color: $primaryColor;
+    color: #f00;
     font-weight: bolder;
   }
   .time-picker-wrap {
@@ -163,7 +163,7 @@ export default {
         position: relative;
         padding-bottom: 174px;
         &::after {
-          content: '';
+          content: "";
           height: 100%;
           width: 1px;
           background: #ededed;
@@ -177,7 +177,7 @@ export default {
           font-size: 14px;
           &.active {
             background: #f5f5f5;
-            color: $primaryColor;
+            color: #f00;
           }
           &:hover {
             background: #f5f5f5;
@@ -196,7 +196,7 @@ export default {
       padding: 0 12px;
       cursor: pointer;
       &.ok {
-        color: $primaryColor;
+        color: #f00;
       }
       &.cancel {
         color: #999;

@@ -1,48 +1,53 @@
 {
-  "介绍":[
-    {
-      "name":"index",
-      "path":"/",
-      "type": "pages",
-      "desc":"主页"
-    }
-  ],
-  "组件": [
-    {
-      "name":"color",
-      "path":"/color",
-      "desc":"color",
-      "type":"pages"
-    },
-    {
-      "name":"icon",
-      "path":"/icon",
-      "desc":"icon"
-    },
-    {
-      "name": "button",
-      "path": "/button",
-      "desc": "button"
-    },
-    {
-      "name": "alert",
-      "path": "/alert",
-      "desc": "alert"
-    },
-    {
-      "name":"message",
-      "path":"/message",
-      "desc":"message"
-    },
-    {
-      "name":"notice",
-      "path":"/notice",
-      "desc":"notice"
-    },
-    {
-      "name": "modal",
-      "path": "/modal",
-      "desc": "modal"
-    }
-  ]
+    "介绍": [
+        {
+            "name": "index",
+            "path": "/",
+            "type": "pages",
+            "desc": "主页"
+        }
+    ],
+    "组件": [
+        {
+            "name": "color",
+            "path": "/color",
+            "desc": "color",
+            "type": "pages"
+        },
+        {
+            "name": "icon",
+            "path": "/icon",
+            "desc": "icon"
+        },
+        {
+            "name": "button",
+            "path": "/button",
+            "desc": "button"
+        },
+        {
+            "name": "alert",
+            "path": "/alert",
+            "desc": "alert"
+        },
+        {
+            "name": "message",
+            "path": "/message",
+            "desc": "message"
+        },
+        {
+            "name": "notice",
+            "path": "/notice",
+            "desc": "notice"
+        },
+        {
+            "name": "modal",
+            "path": "/modal",
+            "desc": "modal"
+        },
+        {
+            "name": "date-picker",
+            "path": "/date-picker",
+            "desc": "date-picker"
+        }
+    ]
 }

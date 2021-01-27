@@ -51,16 +51,16 @@
   </section>
 </template>
 <script>
-import timeUtil from '../date-picker'
-import { formatDate } from '@/util'
+import timeUtil from "../date-picker";
 export default {
+  name: "WDatePicker",
   data() {
     return {
       myDate: [], //当前时间
       list: [], // 月份list
       historyChose: [], //选过的时间
-      checkedDate: ''
-    }
+      checkedDate: ""
+    };
   },
   props: {
     markDate: {
@@ -73,14 +73,14 @@ export default {
     },
     weekName: {
       type: Array,
-      default: () => ['日', '一', '二', '三', '四', '五', '六']
+      default: () => ["日", "一", "二", "三", "四", "五", "六"]
     },
     //如果是true  weekName就从周日开始
     sundayStart: {
       type: Boolean,
       default: () => true
     },
-    agoDayHide: { type: String, default: '0' }, //用于屏蔽过去的时间戳
+    agoDayHide: { type: String, default: "0" }, //用于屏蔽过去的时间戳
     futureDayHide: { type: String, default: `2554387200` }, //用于屏蔽未来的时间戳
     hideFooter: {
       type: Boolean,
@@ -92,157 +92,157 @@ export default {
     }
   },
   created() {
-    this.intStart()
-    this.myDate = new Date()
+    this.intStart();
+    this.myDate = new Date();
   },
   methods: {
     intStart() {
-      timeUtil.sundayStart = this.sundayStart
+      timeUtil.sundayStart = this.sundayStart;
     },
     setClass(data) {
-      let obj = {}
-      obj[data.markClassName] = data.markClassName
-      return obj
+      let obj = {};
+      obj[data.markClassName] = data.markClassName;
+      return obj;
     },
 
     //当前选中日期
     clickDay: function(item, index) {
-      if (item.otherMonth === 'nowMonth' && !item.dayHide) {
-        this.getList(this.myDate, item.date)
+      if (item.otherMonth === "nowMonth" && !item.dayHide) {
+        this.getList(this.myDate, item.date);
       }
-      if (item.otherMonth !== 'nowMonth') {
-        item.otherMonth === 'preMonth'
+      if (item.otherMonth !== "nowMonth") {
+        item.otherMonth === "preMonth"
           ? this.PreMonth(item.date)
-          : this.NextMonth(item.date)
+          : this.NextMonth(item.date);
       }
       //传给父组件
-      this.$emit('input', item.date.replace(/\//g, '-'))
+      this.$emit("input", item.date.replace(/\//g, "-"));
     },
     ChoseMonth: function(date, isChosedDay = true) {
-      date = timeUtil.dateFormat(date)
-      this.myDate = new Date(date)
-      this.$emit('changeMonth', timeUtil.dateFormat(this.myDate))
+      date = timeUtil.dateFormat(date);
+      this.myDate = new Date(date);
+      this.$emit("changeMonth", timeUtil.dateFormat(this.myDate));
       if (isChosedDay) {
-        this.getList(this.myDate, date, isChosedDay)
+        this.getList(this.myDate, date, isChosedDay);
       } else {
-        this.getList(this.myDate)
+        this.getList(this.myDate);
       }
     },
     PreMonth: function(date, isChosedDay = true) {
-      date = timeUtil.dateFormat(date)
-      this.myDate = timeUtil.getOtherMonth(this.myDate, 'preMonth')
-      this.$emit('changeMonth', timeUtil.dateFormat(this.myDate))
+      date = timeUtil.dateFormat(date);
+      this.myDate = timeUtil.getOtherMonth(this.myDate, "preMonth");
+      this.$emit("changeMonth", timeUtil.dateFormat(this.myDate));
       if (isChosedDay) {
-        this.getList(this.myDate, date, isChosedDay)
+        this.getList(this.myDate, date, isChosedDay);
       } else {
-        this.getList(this.myDate)
+        this.getList(this.myDate);
       }
     },
     NextMonth: function(date, isChosedDay = true) {
-      date = timeUtil.dateFormat(date)
-      this.myDate = timeUtil.getOtherMonth(this.myDate, 'nextMonth')
-      this.$emit('changeMonth', timeUtil.dateFormat(this.myDate))
+      date = timeUtil.dateFormat(date);
+      this.myDate = timeUtil.getOtherMonth(this.myDate, "nextMonth");
+      this.$emit("changeMonth", timeUtil.dateFormat(this.myDate));
       if (isChosedDay) {
-        this.getList(this.myDate, date, isChosedDay)
+        this.getList(this.myDate, date, isChosedDay);
       } else {
-        this.getList(this.myDate)
+        this.getList(this.myDate);
       }
     },
     forMatArgs: function() {
-      let markDate = this.markDate
-      let markDateMore = this.markDateMore
-      markDate = markDate.map((k) => {
-        return timeUtil.dateFormat(k)
-      })
-      markDateMore = markDateMore.map((k) => {
-        k.date = timeUtil.dateFormat(k.date)
-        return k
-      })
-      return [markDate, markDateMore]
+      let markDate = this.markDate;
+      let markDateMore = this.markDateMore;
+      markDate = markDate.map(k => {
+        return timeUtil.dateFormat(k);
+      });
+      markDateMore = markDateMore.map(k => {
+        k.date = timeUtil.dateFormat(k.date);
+        return k;
+      });
+      return [markDate, markDateMore];
     },
     getList: function(date, chooseDay, isChosedDay = true) {
-      const [markDate, markDateMore] = this.forMatArgs()
+      const [markDate, markDateMore] = this.forMatArgs();
       // this.checkedDate = `${date.getFullYear()}年${date.getMonth() + 1}月`;
-      let monthStr = date.getMonth() + 1
-      if (monthStr < 10) monthStr = '0' + monthStr
-      this.checkedDate = `${date.getFullYear()}-${monthStr}`
-      let arr = timeUtil.getMonthList(this.myDate)
+      let monthStr = date.getMonth() + 1;
+      if (monthStr < 10) monthStr = "0" + monthStr;
+      this.checkedDate = `${date.getFullYear()}-${monthStr}`;
+      let arr = timeUtil.getMonthList(this.myDate);
       for (let i = 0; i < arr.length; i++) {
-        let markClassName = ''
-        let k = arr[i]
+        let markClassName = "";
+        let k = arr[i];
         // k.chooseDay = k.isToday;
-        k.chooseDay = false
-        const nowTime = k.date
-        const t = new Date(nowTime).getTime() / 1000
+        k.chooseDay = false;
+        const nowTime = k.date;
+        const t = new Date(nowTime).getTime() / 1000;
         //看每一天的class
         for (const c of markDateMore) {
           if (c.date === nowTime) {
-            markClassName = c.className || ''
+            markClassName = c.className || "";
           }
         }
         //标记选中某些天 设置class
-        k.markClassName = markClassName
-        k.isMark = markDate.indexOf(nowTime) > -1
+        k.markClassName = markClassName;
+        k.isMark = markDate.indexOf(nowTime) > -1;
         //无法选中某天
-        k.dayHide = t < this.agoDayHide || t > this.futureDayHide
+        k.dayHide = t < this.agoDayHide || t > this.futureDayHide;
         if (k.isToday) {
-          this.$emit('isToday', nowTime)
+          this.$emit("isToday", nowTime);
         }
-        let flag = !k.dayHide && k.otherMonth === 'nowMonth'
+        let flag = !k.dayHide && k.otherMonth === "nowMonth";
         if (chooseDay && chooseDay === nowTime && flag) {
-          this.$emit('choseDay', nowTime)
-          this.historyChose.push(nowTime)
-          k.chooseDay = true
+          this.$emit("choseDay", nowTime);
+          this.historyChose.push(nowTime);
+          k.chooseDay = true;
         } else if (
           this.historyChose[this.historyChose.length - 1] === nowTime &&
           !chooseDay &&
           flag
         ) {
-          k.chooseDay = true
+          k.chooseDay = true;
         }
       }
-      this.list = arr
+      this.list = arr;
     }
   },
   mounted() {
-    this.getList(this.myDate, timeUtil.setToday())
+    this.getList(this.myDate, timeUtil.setToday());
   },
   watch: {
     markDate: {
       handler() {
-        this.getList(this.myDate)
+        this.getList(this.myDate);
       },
       deep: true
     },
     markDateMore: {
       handler() {
-        this.getList(this.myDate)
+        this.getList(this.myDate);
       },
       deep: true
     },
     agoDayHide: {
       handler(val) {
-        this.agoDayHide = parseInt(val)
-        this.getList(this.myDate)
+        this.agoDayHide = parseInt(val);
+        this.getList(this.myDate);
       },
       deep: true
     },
     futureDayHide: {
       handler(val) {
-        this.futureDayHide = parseInt(val)
-        this.getList(this.myDate)
+        this.futureDayHide = parseInt(val);
+        this.getList(this.myDate);
       },
       deep: true
     },
     sundayStart: {
       handler() {
-        this.intStart()
-        this.getList(this.myDate)
+        this.intStart();
+        this.getList(this.myDate);
       },
       deep: true
     }
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
@@ -266,7 +266,7 @@ export default {
       padding: 0 12px;
       cursor: pointer;
       &.ok {
-        color: $primaryColor;
+        color: #f00;
       }
       &.cancel {
         color: #999;
@@ -293,7 +293,7 @@ export default {
         cursor: auto;
         flex: 2.5;
         font-weight: bolder;
-        color: $primaryColor !important;
+        color: #f00 !important;
       }
     }
   }
@@ -401,7 +401,7 @@ export default {
   }
 
   .w_chose_day {
-    background: $primaryColor !important;
+    background: #f00 !important;
     color: #fff !important;
     border-radius: 100px !important;
   }
