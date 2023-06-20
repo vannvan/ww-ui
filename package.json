@@ -1,5 +1,5 @@
 {
-  "name": "w-ui",
+  "name": "ww-ui",
   "version": "1.0.0",
   "description": "Knowledge archiving based on vue.js",
   "author": "vannvan adoerww@gmail.com",
@@ -16,9 +16,8 @@
     "less-loader": "^4.1.0",
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-container": "^2.0.0",
-    "node-sass": "^4.14.1",
     "sass": "^1.19.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^7.3.1",
     "vue": "^2.5.2",
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.1"
