@@ -31,7 +31,7 @@
 
 ## 开发
 
-> npm i / yarn  
+> npm i --force 由于开发比较早了有些包比较旧会提示不兼容
 > npm start
 
 `.npmrc`已注释，如有需要可开启`taobao`源
