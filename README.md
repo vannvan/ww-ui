@@ -4,22 +4,39 @@
   </a>
 </p>
 
-## About
+![](https://badgen.net/npm/node/next)
+![](https://img.shields.io/badge/Vue.js-=2.0-blue)
+![](https://img.shields.io/badge/npm->=3.0-blue)
 
-此组件库的主要用途是将自己在运用vue.js过程中的经验汇总为可以与更多人共享的资源。目前市面上诸多基于vue.js的UI框架数不胜数，这个组件库也仅由我一个人维护开发，尝试自己亲手造轮子的过程，并且也在不断的增加组件及功能，其间参考过不少各个社区开发者的开发经验及组件实现过程的方案，在此表示诚挚的谢意，由于各类参考出处繁杂便不一一列出，感谢大家的支持，希望一起学习交流。
+[演示地址](https://vannvan.github.io/ww-ui/dist/#/)
 
-## ww-ui
+> `ww-ui`是一款基于vue.js  2.0的前端UI组件库，适用于PC网站中后台产品。  
 
-`ww-ui`是一款基于vue.js  2.0的前端UI组件库，适用于PC网站中后台产品。
+![](https://p.ipic.vip/dav1qt.png)
 
-[演示地址](https://vannvan.github.io/w-ui/dist/#/)
+## 关于
 
-## Characteristic
+此组件库的主要目的是为了了解如何从0到1实现一个组件库，虽然目前仅实现了8个组件，但其实已基本覆盖了开发一个`Vue.js`通用型组件的常用技巧和方法，通过自己造轮子以切身感受市面上主流UI框架在设计时的考量(当然此组件库的考量还远远达不到)，但其实原理大相径庭。  
+
+曾尝试作为企业内部通用组件开发的“架子”，因此可以在此基础之上去完善更多的能力。
+
+相比很多UI组件库海量的代码去了解实现过程而言，此组件库更能让你在短时间掌握这一项能力，再去看主流组件库的详细设计就比较简单了。
+
+希望能够帮助到你！
+
+## 特性
 
 - 组件思想较易理解
 - 提供友好的API,使用灵活
 
-## Usage
+## 开发
+
+> npm i / yarn  
+> npm start
+
+`.npmrc`已注释，如有需要可开启`taobao`源
+
+## 使用
 
 ``` js
 import Wui from 'wwui' // 引入组件库
@@ -27,8 +44,6 @@ import 'wwui/dist/styles/wwui.css'; // 引入样式库
 Vue.use(Wui)
 ```
 
-## Contribution
+## 最后
 
-如果你在使用 `ww-UI` 时遇到问题，或者有好的建议，欢迎给我提 [Issue](https://github.com/vannvan/w-ui/issues) 或 [Pull Request](https://github.com/vannvan/w-ui/pulls)
-
-### 组件仍在不断迭代更新中...
+如果对你有帮助欢迎点个激励的⭐️
